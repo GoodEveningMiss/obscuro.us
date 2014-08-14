@@ -1,2 +1,7 @@
 # vim files
 *.swp
+
+# rails
+/tmp
+/log
+/db/*.sqlite3
