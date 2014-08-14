@@ -9,8 +9,8 @@ Drop.io meets Uservoice
 	* Install Ruby:	`rbenv install 2.0.0`
 	* Install Rails: `gem install rails`
 2. Get this repo!
-	Install [git](http://git-scm.com/downloads) if you don't have it.
-	git clone git@github.com:GoodEveningMiss/ideal.ly.git
+	* Install [git](http://git-scm.com/downloads) if you don't have it.
+	* git clone git@github.com:GoodEveningMiss/ideal.ly.git
 3. Run the app!
 	* `cd ideal.ly`
 	* `rails server`
