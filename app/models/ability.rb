@@ -2,18 +2,25 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    # Define abilities for the passed in user here. For example:
-    #
-    user ||= User.new # guest user (not logged in)
-    if user.role? :admin
-       can :manage, :all
+    # Global
+    can :read, :pages
+    can :show, [List, Idea]
+    
+    unless user
+      # Guest user
+      can :create, User
     else
-      can :read, :all
+      # Registered users
+      # allow indexing of only their stuff
       
-      # fine-tune, we don't want list admins changing upvotes and timestamps
       can :manage, List do | list | 
         list.try ( :owner ) == user
       end 
+      
+      # Admin users
+      if user.role? :admin
+       can :manage, :all
+      end
     end
     #
     # The first argument to `can` is the action you are giving the user 
