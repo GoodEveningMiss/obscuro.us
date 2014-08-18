@@ -12,6 +12,8 @@ class Ability
     else
       # Registered users
       # allow indexing of only their stuff
+      can :index, List # owner
+      can :index, Idea # where owner
       
       can :manage, List do | list | 
         list.try ( :owner ) == user
