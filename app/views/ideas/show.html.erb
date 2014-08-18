@@ -1,0 +1,26 @@
+<div class="page-header">
+  <%= link_to ideas_path, :class => 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_idea_path(@idea), :class => 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show idea</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Body:</dt>
+  <dd><%= @idea.body %></dd>
+
+  <dt>Due date:</dt>
+  <dd><%= @idea.due_date %></dd>
+
+  <dt>Completion status:</dt>
+  <dd><%= @idea.completion_status %></dd>
+
+  <dt>Votes:</dt>
+  <dd><%= @idea.votes %></dd>
+
+</dl>
