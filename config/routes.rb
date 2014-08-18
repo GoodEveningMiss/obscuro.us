@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users , :controllers => { :registrations => "users/registrations" } 
   # You can have the root of your site routed with "root"
   root 'lists#index' # placeholder for now, to satisfy devise
   
