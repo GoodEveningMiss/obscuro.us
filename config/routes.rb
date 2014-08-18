@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users , :controllers => { :registrations => "users/registrations" } 
+  get 'pages/index'
+
   # You can have the root of your site routed with "root"
-  root 'lists#index' # placeholder for now, to satisfy devise
+  root 'pages#index' # placeholder for now, to satisfy devise
+    
+  devise_for :users , :controllers => { :registrations => "users/registrations" } 
   
   resources :users
 
