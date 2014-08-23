@@ -20,7 +20,7 @@ class Ability
       # end 
       
       # Admin users
-      if user.role? :admin
+      if user.role == 'admin'
        can :manage, :all
       end
     end
