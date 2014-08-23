@@ -3,5 +3,12 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  ROLES = %w[admin regular] #other good option: banned
+  ROLES = %w[admin registered] #other good option: banned
+  
+  before_create :set_default_role
+
+  private
+  def set_default_role
+    self.role ||= Role.find_by_name('registered')
+  end
 end
