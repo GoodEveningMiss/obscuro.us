@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   ROLES = %w[admin registered] #other good option: banned
   
   before_create :set_default_role
+  
+  has_many :lists
 
   private
   def set_default_role
