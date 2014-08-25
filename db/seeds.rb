@@ -16,7 +16,8 @@ def new_user (params)
     user.password_confirmation = params[:password_confirmation]
     user.role     = params[:role] || 'registered';
   end
-  puts 'New user created: ' << user.name
+  puts "#{user.role} user found or created: #{user.name}"
 end
 
 new_user(name: 'admin', email: 'ideallyhelp@gmail.com', password: 'seniordesign', password_confirmation: 'seniordesign', role: 'admin');
+new_user(name: 'connie', email: 'clin269@gmail.com', password: 'whataterriblepassword', password_confirmation: 'whataterriblepassword', role: 'admin');
