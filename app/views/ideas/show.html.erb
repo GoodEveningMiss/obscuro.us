@@ -7,10 +7,13 @@
     <span class="glyphicon glyphicon-pencil"></span>
     Edit
   <% end %>
-  <h1>Show idea</h1>
+  <h1>Idea <%= @idea.id %></h1>
 </div>
 
 <dl class="dl-horizontal">
+  <dt>List_id:</dt>
+  <dd><%= @idea.list_id %></dd>
+  
   <dt>Body:</dt>
   <dd><%= @idea.body %></dd>
 

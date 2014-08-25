@@ -7,7 +7,7 @@
     <span class="glyphicon glyphicon-pencil"></span>
     Edit
   <% end %>
-  <h1>Show list</h1>
+  <h1>List <%= @list.id %></h1>
 </div>
 
 <dl class="dl-horizontal">
@@ -20,4 +20,6 @@
   <dt>Description:</dt>
   <dd><%= @list.description %></dd>
 
+  <dt>User_id:</dt>
+  <dd><%= @list.user_id %></dd>
 </dl>
