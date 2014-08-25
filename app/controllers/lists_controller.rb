@@ -70,6 +70,11 @@ class ListsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def list_params
-      params.require(:list).permit(:name, :url, :description)
+      if current_user && current_user.role == 'admin'
+        params.require(:list).permit(:name, :url, :description, :user_id)
+      #else
+        #params.require(:list).permit(:name, :description) # create_params
+        #params.require(:list).permit(:url) # show, no show via :id
+      end
     end
 end

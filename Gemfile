@@ -22,8 +22,8 @@ gem 'bootstrap-generators'
 
 # Devise for user management
 gem 'devise'
-# Can can for authorization
-gem 'cancan'
+# CanCanCan for authorization, since CanCan is at a standstill
+gem 'cancancan'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

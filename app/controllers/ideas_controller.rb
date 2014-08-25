@@ -70,6 +70,12 @@ class IdeasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def idea_params
-      params.require(:idea).permit(:body, :due_date, :completion_status, :votes)
+      if current_user && current_user.role == 'admin'
+        params.require(:idea).permit(:body, :due_date, :completion_status, :votes, :list_id)
+      #else
+        #params.require(:idea).permit(:body, :due_date) # create_params
+        # :completion_status # list admin
+        # :votes) # never! only increment or clear for list admin?
+      end
     end
 end
