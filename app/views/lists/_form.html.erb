@@ -36,9 +36,12 @@
       <%= f.number_field :user_id, :class => "form-control" %>
     </div>
   </div>
-  
-  <%= f.fields_for :ideas %>
-  <p><%= f.link_to_add "Add an idea", :ideas, class: 'btn btn-primary col-sm-offset-3' %></p>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <%= f.fields_for :ideas %>
+      <p><%= f.link_to_add "Add an idea", :ideas, class: 'btn btn-info col-sm-offset-2' %></p>
+    </div>
+  </div>
   
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
