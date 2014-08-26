@@ -9,8 +9,8 @@ gem 'pg'
 
 # for Heroku static assets and logging
 gem 'rails_12factor', group: :production
-# add bootstrap
-#gem 'bootstrap-sass', '~> 3.2.0'
+# add bootswatch theme
+gem 'bootswatch-rails'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
