@@ -3,7 +3,8 @@ class List < ActiveRecord::Base
   before_create :set_unique_url
   
   belongs_to :user
-  has_many :ideas
+  has_many :ideas, dependent: :destroy
+  accepts_nested_attributes_for :ideas, :allow_destroy => true
   
   
   private

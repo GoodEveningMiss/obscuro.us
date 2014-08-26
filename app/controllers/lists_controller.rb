@@ -16,6 +16,7 @@ class ListsController < ApplicationController
   # GET /lists/new
   def new
     @list = List.new
+    @list.ideas.build
   end
 
   # GET /lists/1/edit
@@ -71,7 +72,8 @@ class ListsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def list_params
       if current_user && current_user.role == 'admin'
-        params.require(:list).permit(:name, :url, :description, :user_id)
+        params.require(:list).permit(:name, :url, :description, :user_id,
+          idea_attributes: [:id, :list_id, :body, :due_date, :completion_status, :votes, :_destroy])
       #else
         #params.require(:list).permit(:name, :description) # create_params
         #params.require(:list).permit(:url) # show, no show via :id
