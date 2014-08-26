@@ -8,6 +8,6 @@ class List < ActiveRecord::Base
   
   private
   def set_unique_url
-    self.url = Digest::SHA256.hexdigest(Time.now.to_r.to_s + self.list_id.to_s)
+    self.url = Digest::SHA256.hexdigest(Time.now.to_r.to_s + self.id.to_s)
   end
 end
