@@ -38,11 +38,7 @@
   </div>
   
   <%= f.fields_for :ideas %>
-  <div class="form-group">
-    <div class="col-sm-offset-6 col-sm-10">
-      <%= f.link_to_add "Add an idea", :ideas, class: 'btn btn-primary' %>
-    </div>
-  </div>
+  <p><%= f.link_to_add "Add an idea", :ideas, class: 'btn btn-primary col-sm-offset-6 col-sm-10' %></p>
   
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
