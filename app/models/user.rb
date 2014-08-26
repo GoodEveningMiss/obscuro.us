@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   
   before_create :set_default_role
   
-  has_many :lists, dependent: :destroy
+  has_many :lists, dependent: :destroy, :inverse_of => :user
 
   private
   def set_default_role

@@ -2,8 +2,8 @@ require 'digest'
 class List < ActiveRecord::Base
   before_create :set_unique_url
   
-  belongs_to :user
-  has_many :ideas, dependent: :destroy
+  belongs_to :user, :inverse_of => :lists
+  has_many :ideas, dependent: :destroy, :inverse_of => :list
   accepts_nested_attributes_for :ideas, :allow_destroy => true
   
   
