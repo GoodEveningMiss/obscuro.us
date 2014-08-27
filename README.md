@@ -34,6 +34,6 @@ frictionless idea crowdsourcing and collaborative task management in an drop.io 
 2. Add the heroku repo as a remote for the repo
 3. Make sure you have access to the heroku app & an account
 4. Add your ssh key to your heroku account
-5. Push changes to master
+5. Push changes to heroku master
   * Only do this if your sure the changes are stable
-  * Using the rails branch as master for now: `git push heroku rails:master`
+  * `git push heroku master`
