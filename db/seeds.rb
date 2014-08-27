@@ -21,3 +21,4 @@ end
 
 new_user(name: 'admin', email: 'ideallyhelp@gmail.com', password: 'seniordesign', password_confirmation: 'seniordesign', role: 'admin');
 new_user(name: 'connie', email: 'clin269@gmail.com', password: 'whataterriblepassword', password_confirmation: 'whataterriblepassword', role: 'admin');
+new_user(name: 'chris', email: 'chris.cottitta@gmail.com', password: 'password12345', password_confirmation: 'password12345', role: 'admin');
