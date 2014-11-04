@@ -1,4 +1,4 @@
-# ideal.ly
+# Obscuro.us
 frictionless idea crowdsourcing and collaborative task management in an drop.io inspired format
 
 ## Getting started
@@ -12,8 +12,8 @@ frictionless idea crowdsourcing and collaborative task management in an drop.io 
 	* Generate rbenv shims for new commands: `rbenv rehash`
 3. Get this repo!
 	* Install [git](http://git-scm.com/downloads) if you don't have it.
-	* `git clone git@github.com:GoodEveningMiss/ideal.ly.git`
-	* `cd ideal.ly`
+	* `git clone git@github.com:GoodEveningMiss/obscuro.us.git`
+	* `cd obscuro.us`
 	* `bundle install` & resolve any errors (see 4. for issues with pg gem)
 	* run `rails generate bootstrap:install -f` to use bootstrap-generators
 4. Set up database
