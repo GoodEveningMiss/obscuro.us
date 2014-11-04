@@ -71,7 +71,7 @@ class ListsController < ApplicationController
     end
     
     def set_list_by_url
-      @list = List.find(params[:url])
+      @list = List.find_by_url(params[:url])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
