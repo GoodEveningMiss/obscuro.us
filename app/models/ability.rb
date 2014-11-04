@@ -12,7 +12,7 @@ class Ability
     else
       # Registered users
       # allow indexing of only their stuff
-      can :manage, User, :user_id => user.id
+      can :manage, User, :id => user.id
       
       # can :index, List # owner
       # can :index, Idea # where owner
