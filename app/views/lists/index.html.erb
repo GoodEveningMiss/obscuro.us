@@ -26,7 +26,7 @@
         <td><%= list.url %></td>
         <td><%= list.description %></td>
         <td><%= list.user_id %></td>
-        <td><%= link_to 'Show', list(list.url) %></td>
+        <td><%= link_to 'Show', list.url %></td>
         <td><%= link_to 'Edit', edit_list_path(list) %></td>
         <td><%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       <% end %>
