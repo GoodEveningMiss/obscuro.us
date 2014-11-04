@@ -43,7 +43,7 @@
               </ul>
             </li>
             <li><%= link_to 'List Dashboard', '#' %></li>
-            <% if current_user.role == 'admin' %>
+            <% if can? :manage, :all %>
               <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                   Administrate

@@ -11,7 +11,7 @@
       Edit
     <% end %>
   <% end %>
-  <h1>List <% if current_user.role == 'admin' %><%= @list.id %>:<% end %> <%= @list.name %></h1>
+  <h1>List <% if can? :index, List %><%= @list.id %>:<% end %> <%= @list.name %></h1>
 </div>
 
 <dl class="dl-horizontal">
