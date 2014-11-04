@@ -6,10 +6,7 @@ class Ability
     # can :read, :pages
     can :show, [List, Idea]
     
-    unless user
-      # Guest user
-      # can :create, User
-    else
+    if user
       # Registered users
       # allow indexing of only their stuff
       can [:show, :update, :destroy], User, :id => user.id
