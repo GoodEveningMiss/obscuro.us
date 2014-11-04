@@ -24,3 +24,13 @@
   <dt>Owner:</dt>
   <dd><% if @list.user %><%= @list.user.name || 'Unnamed User' %><% else %>Anonymous<% end %></dd>
 </dl>
+<div class="table-responsive">
+  <table class="table table-hover table-condensed">
+    <% @list.ideas.each do |idea| %>
+    <tr>
+      <td><%= idea.votes || 0 %></td>
+      <td><%= idea.body %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
