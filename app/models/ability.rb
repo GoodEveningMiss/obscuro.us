@@ -2,15 +2,15 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    # Global
-    # can :read, :pages
-    can :show, [List, Idea]
-    
-    if user
+    # Anon user
+    unless user
+      can :show, [List, Idea]
+    else
       # Registered users
+      can :show, [List, Idea]
+      
       # allow indexing of only their stuff
       can [:show, :update, :destroy], User, :id => user.id
-      
       # can :index, List # owner
       # can :index, Idea # where owner
       
