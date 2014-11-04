@@ -4,7 +4,7 @@ class Ability
   def initialize(user)
     # Global
     # can :read, :pages
-    # can :show, [List, Idea]
+    can :show, [List, Idea]
     
     unless user
       # Guest user
@@ -12,12 +12,14 @@ class Ability
     else
       # Registered users
       # allow indexing of only their stuff
+      can :manage, User, :user_id => user.id
+      
       # can :index, List # owner
       # can :index, Idea # where owner
       
       # can :manage, List do | list | 
-      #   list.try ( :owner ) == user
-      # end 
+      #    list.try ( :owner ) == user
+      # end
       
       # Admin users
       if user.role == 'admin'
