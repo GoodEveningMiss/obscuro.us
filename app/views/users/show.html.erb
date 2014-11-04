@@ -1,5 +1,5 @@
 <div class="page-header">
-  <% if can? :index, Users %>
+  <% if can? :index, User %>
     <%= link_to users_path, :class => 'btn btn-default' do %>
       <span class="glyphicon glyphicon-list-alt"></span>
       Back
@@ -9,7 +9,7 @@
     <span class="glyphicon glyphicon-pencil"></span>
     Edit
   <% end %>
-  <h1>User <% if can? :index, Users %><%= @user.id %>:<% end %> <%= @user.name %></h1>
+  <h1>User <% if can? :index, User %><%= @user.id %>:<% end %> <%= @user.name %></h1>
 </div>
 
 <dl class="dl-horizontal">
