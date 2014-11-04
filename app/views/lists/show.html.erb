@@ -1,11 +1,15 @@
 <div class="page-header">
-  <%= link_to lists_path, :class => 'btn btn-default' do %>
-    <span class="glyphicon glyphicon-list-alt"></span>
-    Back
+  <% if can? :index, Lists %>
+    <%= link_to lists_path, :class => 'btn btn-default' do %>
+      <span class="glyphicon glyphicon-list-alt"></span>
+      Back
+    <% end %>
   <% end %>
-  <%= link_to edit_list_path(@list.url), :class => 'btn btn-primary' do %>
-    <span class="glyphicon glyphicon-pencil"></span>
-    Edit
+  <% if can? :edit, @list %>
+    <%= link_to edit_list_path(@list.url), :class => 'btn btn-primary' do %>
+      <span class="glyphicon glyphicon-pencil"></span>
+      Edit
+    <% end %>
   <% end %>
   <h1>List <% if current_user.role == 'admin' %><%= @list.id %>:<% end %> <%= @list.name %></h1>
 </div>

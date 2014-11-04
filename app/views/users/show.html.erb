@@ -9,7 +9,7 @@
     <span class="glyphicon glyphicon-pencil"></span>
     Edit
   <% end %>
-  <h1>User <%= @user.id %></h1>
+  <h1>User <% if can? :index, Users %><%= @user.id %>:<% end %> <%= @user.name %></h1>
 </div>
 
 <dl class="dl-horizontal">

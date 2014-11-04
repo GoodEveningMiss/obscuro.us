@@ -42,6 +42,7 @@
                 <li><%= link_to 'Logout', destroy_user_session_path %></li>
               </ul>
             </li>
+            <li>List Dashboard</li>
             <% if current_user.role == 'admin' %>
               <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
