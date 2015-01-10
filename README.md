@@ -17,7 +17,7 @@ frictionless idea crowdsourcing and collaborative task management in an drop.io 
 	* `bundle install` & resolve any errors (see 4. for issues with pg gem)
 	* run `rails generate bootstrap:install -f` to use bootstrap-generators
 4. Set up database
-  * Install Postgres dependencies (Look up your system and pg gem/Postgres)
+  * Install [Postgres](http://www.postgresql.org/download/) dependencies (Look up your system and pg gem/Postgres)
   * Create app user: `sudo su - postgres -c psql` & `create role ideally with createdb login password 'ideally';`
   * Change Postgres access configuration:
     * `sudo vi /etc/postgresql/9.1/main/pg_hba.conf`
