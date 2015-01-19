@@ -34,7 +34,7 @@
           <% if user_signed_in? %>
             <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                <%= current_user.name || 'User' %>
+                <%= current_user.name.blank? ? 'User' : current_user.name %>
                 <b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
