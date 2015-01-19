@@ -9,8 +9,8 @@ class ListsController < ApplicationController
     @lists = List.all
   end
 
-  # GET /lists/1
-  # GET /lists/1.json
+  # GET /lists/:url
+  # GET /lists/:url.json
   def show
   end
 
@@ -20,7 +20,7 @@ class ListsController < ApplicationController
     @list.ideas.build
   end
 
-  # GET /lists/1/edit
+  # GET /lists/:url/edit
   def edit
   end
 
@@ -40,8 +40,8 @@ class ListsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /lists/1
-  # PATCH/PUT /lists/1.json
+  # PATCH/PUT /lists/:url
+  # PATCH/PUT /lists/:url.json
   def update
     respond_to do |format|
       if @list.update(list_params)
@@ -54,8 +54,8 @@ class ListsController < ApplicationController
     end
   end
 
-  # DELETE /lists/1
-  # DELETE /lists/1.json
+  # DELETE /lists/:url
+  # DELETE /lists/:url.json
   def destroy
     @list.destroy
     respond_to do |format|
