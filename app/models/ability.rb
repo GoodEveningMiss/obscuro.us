@@ -2,12 +2,16 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
+   
     # Anon user
     unless user
       can :show, [List, Idea]
+      can :new, [List,Idea]
+      
     else
       # Registered users
       can :show, [List, Idea]
+      can :new, [List,Idea]
       
       # allow indexing of only their stuff
       can [:show, :update, :destroy], User, :id => user.id
@@ -15,6 +19,7 @@ class Ability
       # can :index, Idea # where owner
       
       can :dashboard, List, :id => user.id
+      
       
       # can :manage, List do | list | 
       #    list.try ( :owner ) == user

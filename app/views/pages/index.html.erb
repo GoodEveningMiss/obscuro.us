@@ -2,8 +2,15 @@
   <h1>Welcome to Obscuro.us!</h1>
 </div>
 <% if user_signed_in? %>
-<p> Welcome back, <%= current_user.name.blank? ? 'User' : current_user.name %>!</p>
+<p>Welcome back, <%= current_user.name.blank? ? 'User' : current_user.name %>!</p>
+<p>Start a new list now.</p>
 <% else %>
 <p>New around here? <%= link_to 'Sign up', new_user_registration_path %></p>
 <p>Already have an account? <%= link_to 'Login', new_user_session_path  %></p>
+<p>Or start posting anonymously!</p>
 <% end %>
+
+  <%= link_to new_list_path, :class => 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New List
+  <% end %>

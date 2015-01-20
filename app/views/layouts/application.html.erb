@@ -43,6 +43,7 @@
               </ul>
             </li>
             <li><%= link_to 'List Dashboard', lists_dashboard_path %></li>
+            <li><%= link_to 'New List', new_list_path %></li>
             <% if can? :manage, :all %>
               <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
