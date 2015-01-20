@@ -33,6 +33,17 @@ class ListsController < ApplicationController
   # POST /lists.json
   def create
     @list = List.new(list_params)
+    
+    # If user cannot enter in field it sets to their user id
+    if @list.user_id.blank?
+      if current_user
+        @list.user_id = current_user.id
+      end
+    end
+    # For admins to assign as ANON
+    if @list.user_id == 0
+      @list.user_id = nil
+    end
 
     respond_to do |format|
       if @list.save
@@ -84,9 +95,9 @@ class ListsController < ApplicationController
       if current_user && current_user.role == 'admin'
         params.require(:list).permit(:name, :url, :description, :user_id,
           ideas_attributes: [:id, :list_id, :body, :due_date, :completion_status, :votes, :_destroy])
-      #else
-        #params.require(:list).permit(:name, :description) # create_params
-        #params.require(:list).permit(:url) # show, no show via :id
+      else
+        params.require(:list).permit(:name, :description,
+          ideas_attributes: [:body, :due_date, :completion_status, :votes]) 
       end
     end
 end
