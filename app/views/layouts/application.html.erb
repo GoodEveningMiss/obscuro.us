@@ -34,7 +34,7 @@
           <% if user_signed_in? %>
             <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                <%= current_user.name || 'User' %>
+                <%= current_user.name.blank? ? 'User' : current_user.name %>
                 <b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
@@ -71,7 +71,7 @@
   </div>
   <div class="container">
     <% flash.each do |name, msg| %>
-      <%= content_tag :div, :class => "alert alert-#{ name == 'error' ? "danger" : "success" } alert-dismissable" do %>
+      <%= content_tag :div, :class => "alert alert-#{ name == 'error' || name == 'alert' ? "danger" : "success" } alert-dismissable" do %>
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
         <%= msg %>
       <% end %>
