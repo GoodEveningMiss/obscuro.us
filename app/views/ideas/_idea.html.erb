@@ -1,0 +1,9 @@
+<li id="idea-<%= idea.id %>" class="idea-item">
+  <span class="voting">
+    <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+    <span class="votes"><%= idea.votes || 0 %></span>
+    <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+  </span>
+  <span class="body"><%= idea.body %></span>
+  <span class="completion"><%= check_box_tag("idea-#{idea.id}", idea.id, idea.completion_status) %></span>
+</li>

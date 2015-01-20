@@ -12,6 +12,7 @@ class ListsController < ApplicationController
   # GET /lists/:url
   # GET /lists/:url.json
   def show
+    @ideas = @list.ideas;
   end
 
   # GET /lists/new
