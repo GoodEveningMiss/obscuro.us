@@ -14,6 +14,8 @@ class Ability
       # can :index, List # owner
       # can :index, Idea # where owner
       
+      can :dashboard, List, :id => user.id
+      
       # can :manage, List do | list | 
       #    list.try ( :owner ) == user
       # end

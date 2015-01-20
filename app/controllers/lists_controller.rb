@@ -8,6 +8,10 @@ class ListsController < ApplicationController
   def index
     @lists = List.all
   end
+  
+  def dashboard
+      @lists = current_user.lists
+  end
 
   # GET /lists/:url
   # GET /lists/:url.json

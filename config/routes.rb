@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get 'pages/index'
+  
+  get 'lists/dashboard'
 
   # You can have the root of your site routed with "root"
   root 'pages#index' # placeholder for now, to satisfy devise
@@ -11,6 +13,7 @@ Rails.application.routes.draw do
   resources :ideas
 
   resources :lists, param: :url
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
