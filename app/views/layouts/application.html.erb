@@ -58,12 +58,9 @@
               </li>
             <% end %>
           <% else %>
-            <li class="active">
-            <%= link_to 'Sign up', new_user_registration_path %>
-            </li>
-            <li>
-            <%= link_to 'Login', new_user_session_path  %>
-            </li>
+            <li class="active"><%= link_to 'Sign up', new_user_registration_path %></li>
+            <li><%= link_to 'Login', new_user_session_path  %></li>
+            <li><%= link_to 'New List', new_list_path %></li>
           <% end %>
           <li><a href="mailto:ideallyhelp@gmail.com">Contact</a></li>
         </ul>

@@ -5,13 +5,12 @@ class Ability
    
     # Anon user
     unless user
-      can :show, [List, Idea]
-      can :new, [List,Idea]
+      can [:show, :new, :create], [List, Idea]
+      
       
     else
       # Registered users
-      can :show, [List, Idea]
-      can :new, [List,Idea]
+      can [:show, :new, :create], [List, Idea]
       
       # allow indexing of only their stuff
       can [:show, :update, :destroy], User, :id => user.id
