@@ -1,0 +1,52 @@
+@import "bootstrap-variables";
+
+/*  ideas  */
+
+.ideas-area {
+  .ideas-list {
+    list-style: none;
+    padding-left: 0px;
+    
+    .idea-item {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin: 4px 0px 4px 0px;
+      display: block;
+      height: 60px;
+      
+      
+      .voting {
+        float: left;
+        margin: 0px 10px 0px 10px;
+        display: block;
+        overflow: hidden;
+        
+        .glyphicon-arrow-up {
+          font-size: .75em;
+        }
+        
+        .votes {
+          text-align: center;
+          font-size: $font-size-small;
+          display: block;
+        }
+        
+        .glyphicon-arrow-down {
+          font-size: .75em;
+        }
+      }
+      
+
+      
+      .body {
+        margin: 0px 4px 0px 4px;
+        
+      }
+      
+      .completion {
+        float: right;
+        margin-right: 10px;
+      }
+    }
+  }
+}

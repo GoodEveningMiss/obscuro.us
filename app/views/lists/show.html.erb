@@ -13,24 +13,24 @@
   <% end %>
   <h1>List <% if can? :index, List %><%= @list.id %>:<% end %> <%= @list.name %></h1>
 </div>
+<div class="list-item">
+  <dl class="dl-horizontal">
+    <dt>Url:</dt>
+    <dd><%= @list.url %></dd>
+  
+    <dt>Description:</dt>
+    <dd><%= @list.description %></dd>
+  
+    <dt>Owner:</dt>
+    <dd><% if @list.user %><%= @list.user.name || 'Unnamed User' %><% else %>Anonymous<% end %></dd>
+  </dl>
+</div>
 
-<dl class="dl-horizontal">
-  <dt>Url:</dt>
-  <dd><%= @list.url %></dd>
-
-  <dt>Description:</dt>
-  <dd><%= @list.description %></dd>
-
-  <dt>Owner:</dt>
-  <dd><% if @list.user %><%= @list.user.name || 'Unnamed User' %><% else %>Anonymous<% end %></dd>
-</dl>
-<div class="table-responsive">
-  <table class="table table-hover table-condensed">
-    <% @list.ideas.each do |idea| %>
-    <tr>
-      <td><%= idea.votes || 0 %></td>
-      <td><%= idea.body %></td>
-    </tr>
-    <% end %>
-  </table>
+<div class="ideas-area">
+  <h3>Ideas (<%= @ideas.count %>)</h3>
+  <% if @ideas.any? %>
+    <ul class="ideas-list">
+      <%= render @ideas %>
+    </ul>
+  <% end %>
 </div>
