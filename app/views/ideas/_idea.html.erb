@@ -1,8 +1,17 @@
 <li id="idea-<%= idea.id %>" class="idea-item">
   <span class="voting">
-    <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
-    <span class="votes"><%= idea.plusminus || 0 %></span>
-    <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+  
+    
+    
+    <%= link_to upvote_idea_path(idea), :class => "glyphicon glyphicon-arrow-up upvote voting", method: :post, :remote => true do %>
+    <% end %>
+    
+    <span class="votes" id="idea-<%= idea.id %>-votes"><%= idea.plusminus || 0 %></span>
+    
+    <%= link_to downvote_idea_path(idea), :class => "glyphicon glyphicon-arrow-down downvote voting", method: :post, :remote => true do %>
+    <% end %>
+    
+  
   </span>
   <span class="body"><%= idea.body %></span>
   <span class="completion"><%= check_box_tag("idea-#{idea.id}", idea.id, idea.completion_status) %></span>

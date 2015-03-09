@@ -26,15 +26,19 @@ class IdeasController < ApplicationController
   def upvote
     if current_user
       current_user.vote_exclusively_for(@idea)
+      render json: [@idea.id, @idea.plusminus], :status => 200
     else
       puts "anonymous user trying to upvote"
     end
   end
   
+  
+  
   # POST /ideas/1/downvote
   def downvote
     if current_user
       current_user.vote_exclusively_against(@idea)
+      render json: [@idea.id, @idea.plusminus], :status => 200
     else
       puts "anonymous user trying to downvote"
     end

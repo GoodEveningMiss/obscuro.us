@@ -10,7 +10,12 @@ Rails.application.routes.draw do
   
   resources :users
 
-  resources :ideas
+  resources :ideas do
+      member do
+        post 'upvote'
+        post 'downvote'
+    end
+  end
 
   resources :lists, param: :url
   
