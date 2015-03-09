@@ -9,6 +9,7 @@ class ListsController < ApplicationController
     @lists = List.all
   end
   
+  # GET /lists/dashboard
   def dashboard
       @lists = current_user.lists
   end
@@ -94,10 +95,10 @@ class ListsController < ApplicationController
     def list_params
       if current_user && current_user.role == 'admin'
         params.require(:list).permit(:name, :url, :description, :user_id,
-          ideas_attributes: [:id, :list_id, :body, :due_date, :completion_status, :votes, :_destroy])
+          ideas_attributes: [:id, :list_id, :body, :due_date, :completion_status, :_destroy])
       else
         params.require(:list).permit(:name, :description,
-          ideas_attributes: [:body, :due_date, :completion_status, :votes]) 
+          ideas_attributes: [:body, :due_date, :completion_status]) 
       end
     end
 end

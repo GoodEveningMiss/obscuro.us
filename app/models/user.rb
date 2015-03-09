@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   
   has_many :lists, dependent: :destroy, :inverse_of => :user
 
+  acts_as_voter
+
   private
   def set_default_role
     self.role ||= 'registered'

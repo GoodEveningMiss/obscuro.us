@@ -21,6 +21,24 @@ class IdeasController < ApplicationController
   # GET /ideas/1/edit
   def edit
   end
+  
+  # POST /ideas/1/upvote
+  def upvote
+    if current_user
+      current_user.vote_exclusively_for(@idea)
+    else
+      puts "anonymous user trying to upvote"
+    end
+  end
+  
+  # POST /ideas/1/downvote
+  def downvote
+    if current_user
+      current_user.vote_exclusively_against(@idea)
+    else
+      puts "anonymous user trying to downvote"
+    end
+  end
 
   # POST /ideas
   # POST /ideas.json
@@ -71,7 +89,7 @@ class IdeasController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def idea_params
       if current_user && current_user.role == 'admin'
-        params.require(:idea).permit(:body, :due_date, :completion_status, :votes, :list_id)
+        params.require(:idea).permit(:body, :due_date, :completion_status, :list_id)
       #else
         #params.require(:idea).permit(:body, :due_date) # create_params
         # :completion_status # list admin
