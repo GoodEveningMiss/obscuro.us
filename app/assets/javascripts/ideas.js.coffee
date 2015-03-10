@@ -12,15 +12,10 @@ $ ->
     voted(data[0],data[1])
     changedown(data[0])
     
-  $("a.unupvote[data-remote]").on "ajax:success", (e, data, status, xhr) ->
-    console.log("unupvote")
+  $("a.unvote[data-remote]").on "ajax:success", (e, data, status, xhr) ->
+    console.log("unvote")
     voted(data[0],data[1])
-    resetup(data[0])
-
-  $("a.undownvote[data-remote]").on "ajax:success", (e, data, status, xhr) ->
-    console.log("undownvote")
-    voted(data[0],data[1])
-    resetdown(data[0])
+    resetvoting(data[0])
     
 voted = (ideaid, votenumber) ->
     console.log("voted, refreshed votenumber and color to black")
@@ -31,23 +26,22 @@ changeup = (ideaid) ->
     console.log("changeup, color to teal, url to unvote, class to teal unupvote")
     $("#idea-"+ideaid+" .upvote").css("color", "#18bc9c")
     $("#idea-"+ideaid+" .upvote").attr("href", "/ideas/"+ideaid+"/unvote")
-    $("#idea-"+ideaid+" .upvote").attr("class", "glyphicon glyphicon-arrow-up teal voting unupvote")
-    
-resetup = (ideaid) ->
-    console.log("resetup, url to upvote, class to upvote")
-    $("#idea-"+ideaid+" .unupvote").attr("href", "/ideas/"+ideaid+"/upvote")
-    $("#idea-"+ideaid+" .unupvote").attr("class", "glyphicon glyphicon-arrow-up voting upvote") 
+    $("#idea-"+ideaid+" .upvote").attr("class", "glyphicon glyphicon-arrow-up teal voting unvote")
 
 changedown = (ideaid) ->
     console.log("changedown, color to teal, url to unvote, class to teal undownvote")
     $("#idea-"+ideaid+" .downvote").css("color", "#18bc9c")
     $("#idea-"+ideaid+" .downvote").attr("href", "/ideas/"+ideaid+"/unvote")
-    $("#idea-"+ideaid+" .downvote").attr("class", "glyphicon glyphicon-arrow-down teal voting undownvote")
-    
-resetdown = (ideaid) ->
-    console.log("resetdown, url to downvote, class to downvote")
-    $("#idea-"+ideaid+" .undownvote").attr("href", "/ideas/"+ideaid+"/downvote")
-    $("#idea-"+ideaid+" .undownvote").attr("class", "glyphicon glyphicon-arrow-down voting downvote")
+    $("#idea-"+ideaid+" .downvote").attr("class", "glyphicon glyphicon-arrow-down teal voting unvote")
+
+resetvoting = (ideaid) ->
+    console.log("resetvoting")
+    console.log("url to upvote, class to upvote")
+    $("#idea-"+ideaid+" .glyphicon-arrow-up").attr("href", "/ideas/"+ideaid+"/upvote")
+    $("#idea-"+ideaid+" .glyphicon-arrow-up").attr("class", "glyphicon glyphicon-arrow-up voting upvote") 
+    console.log("url to downvote, class to downvote")
+    $("#idea-"+ideaid+" .glyphicon-arrow-down").attr("href", "/ideas/"+ideaid+"/downvote")
+    $("#idea-"+ideaid+" .glyphicon-arrow-down").attr("class", "glyphicon glyphicon-arrow-down voting downvote")
     
     
     
