@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'pages/index'
+  get 'index' => 'pages#index'
+  get 'help' => 'pages#help'
   
   get 'lists/dashboard'
 
