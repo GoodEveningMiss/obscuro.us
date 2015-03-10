@@ -3,7 +3,7 @@
      
      
      <% if current_user.voted_for?(idea) %>
-      <%= link_to unvote_idea_path(idea), :class => "glyphicon glyphicon-arrow-up teal upvote voting", method: :post, :remote => true do %>
+      <%= link_to unvote_idea_path(idea), :class => "glyphicon glyphicon-arrow-up teal unupvote voting", method: :post, :remote => true do %>
       <% end %>
     <% else %>
       <%= link_to upvote_idea_path(idea), :class => "glyphicon glyphicon-arrow-up upvote voting", method: :post, :remote => true do %>
@@ -13,7 +13,7 @@
     <span class="votes" id="idea-<%= idea.id %>-votes"><%= idea.plusminus || 0 %></span>
 
     <% if current_user.voted_against?(idea) %>    
-      <%= link_to unvote_idea_path(idea), :class => "glyphicon glyphicon-arrow-down teal downvote voting", method: :post, :remote => true do %>
+      <%= link_to unvote_idea_path(idea), :class => "glyphicon glyphicon-arrow-down teal undownvote voting", method: :post, :remote => true do %>
       <% end %>
     <% else %>
       <%= link_to downvote_idea_path(idea), :class => "glyphicon glyphicon-arrow-down downvote voting", method: :post, :remote => true do %>
