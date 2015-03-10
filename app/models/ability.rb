@@ -15,10 +15,11 @@ class Ability
       
       # allow indexing of only their stuff
       can [:show, :update, :destroy], User, :id => user.id
-      # can :index, List # owner
+      can [:dashboard, :destroy], List, :id => user.id
+      # :edit, :update broken because "Unpermitted parameters: _destroy, id"
       # can :index, Idea # where owner
       
-      can :dashboard, List, :id => user.id
+      
       
       
       # can :manage, List do | list | 
