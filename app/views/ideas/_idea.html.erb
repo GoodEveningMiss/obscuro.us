@@ -1,8 +1,9 @@
 <li id="idea-<%= idea.id %>" class="idea-item">
   <span class="voting">
-  
-    <% if current_user && current_user.voted_for?(idea) %>
-      <%= link_to unvote_idea_path(idea), :class => "glyphicon glyphicon-arrow-up teal unvote voting", method: :post, :remote => true do %>
+     
+     
+     <% if current_user.voted_for?(idea) %>
+      <%= link_to unvote_idea_path(idea), :class => "glyphicon glyphicon-arrow-up teal unupvote voting", method: :post, :remote => true do %>
       <% end %>
     <% else %>
       <%= link_to upvote_idea_path(idea), :class => "glyphicon glyphicon-arrow-up upvote voting", method: :post, :remote => true do %>
@@ -10,14 +11,15 @@
     <% end %>
     
     <span class="votes" id="idea-<%= idea.id %>-votes"><%= idea.plusminus || 0 %></span>
-  
-    <% if current_user && current_user.voted_against?(idea) %>    
-      <%= link_to unvote_idea_path(idea), :class => "glyphicon glyphicon-arrow-down teal unvote voting", method: :post, :remote => true do %>
+
+    <% if current_user.voted_against?(idea) %>    
+      <%= link_to unvote_idea_path(idea), :class => "glyphicon glyphicon-arrow-down teal undownvote voting", method: :post, :remote => true do %>
       <% end %>
     <% else %>
       <%= link_to downvote_idea_path(idea), :class => "glyphicon glyphicon-arrow-down downvote voting", method: :post, :remote => true do %>
       <% end %>
     <% end %>
+   
    
   </span>
   <span class="body"><%= idea.body %></span>
