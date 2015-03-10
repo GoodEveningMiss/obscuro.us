@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       member do
         post 'upvote'
         post 'downvote'
+        post 'unvote'
     end
   end
 

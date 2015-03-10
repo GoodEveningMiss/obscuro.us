@@ -32,8 +32,6 @@ class IdeasController < ApplicationController
     end
   end
   
-  
-  
   # POST /ideas/1/downvote
   def downvote
     if current_user
@@ -41,6 +39,16 @@ class IdeasController < ApplicationController
       render json: [@idea.id, @idea.plusminus], :status => 200
     else
       puts "anonymous user trying to downvote"
+    end
+  end
+  
+  # POST /ideas/1/unvote
+  def unvote
+      if current_user
+        current_user.unvote_for(@idea)
+        render json: [@idea.id, @idea.plusminus], :status => 200
+    else
+      puts "anonymous user trying to unvote -> IF YOU SEE THIS, IT IS REALLY BAD"
     end
   end
 
