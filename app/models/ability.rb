@@ -11,6 +11,7 @@ class Ability
     else
       # Registered users
       can [:show, :new, :create], [List, Idea]
+      can [:upvote, :downvote, :unvote], Idea
       
       # allow indexing of only their stuff
       can [:show, :update, :destroy], User, :id => user.id
